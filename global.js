@@ -41,4 +41,49 @@ for (let p of pages) {
     a.target = a.host !== location.host ? "_blank" : "";
 }
 
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select>
+      <option value="light dark">Automatic</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  `
+);
 
+const select = document.querySelector('select');
+
+if ('colorScheme' in localStorage) {
+  const saved = localStorage.colorScheme;
+  document.documentElement.style.setProperty('color-scheme', saved);
+  select.value = saved;
+}
+
+select.addEventListener('input', function (event) {
+  const value = event.target.value;
+  document.documentElement.style.setProperty('color-scheme', value);
+  localStorage.colorScheme = value;
+});
+
+const form = document.querySelector('form');
+
+form?.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const data = new FormData(form);
+  let url = form.action + "?"; // start with form.action and "?"
+
+  for (let [name, value] of data) {
+    url += `${name}=${encodeURIComponent(value)}&`; // build URL progressively
+  }
+
+  url = url.slice(0, -1); // remove the last "&"
+
+  console.log(url)
+
+  location.href = url;
+});

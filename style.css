@@ -17,7 +17,8 @@ html {
 nav {
   display: flex;
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -29,15 +30,16 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
 }
 
 :root { 
   --color-accent: oklch(0.7 0.1 244.78);
+  color-scheme: dark;
 }
 
 nav a:hover {
-  background-color: oklch(from var(--color-accent) 95% 5% h); 
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   border-bottom: 0.4em solid var(--color-accent); 
 }
 
@@ -47,16 +49,17 @@ form {
   gap: 1em;
 }
 
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
 label,
 button {
   grid-column: 1 / -1;
 }
 
-label {
-  display: contents;
-}
-
-input,
+input, 
 textarea,
 button {
   font: inherit;
@@ -128,4 +131,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
 }
 
-
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
