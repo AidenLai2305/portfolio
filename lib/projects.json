@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Deceptive Statistics: Does the law treat all individuals equally?",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Created two different graphs which argue both sides of the substantiated complaints in New York. One side argues that all races' complains are justified, the other argues that black individuals are treated more unfairly."
+    },
+    {
+        "title": "Off Target: Your Average Carton of Eggs Costs An Additional $4.69",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Analyzed the change in price between 2022 and the present egg prices from Target, which rose significantly across most brands, sizes, and types. The rise in price may be due to factors like inflation over time and the avian influenza."
+    },
+    {
+        "title": "How Long Will It Take? Predicting Recipe Duration",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Conducted statistical analysis and data cleaning from a dataset of over 83,000 recipes and built multiple regression models to predict recipe duration using features found in meta data like ingredients, steps, and user ratings."
+    },
+    {
+        "title": "Draw & Detect: Real-Time Handwriting Classifier",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": " Developed an interactive (K-NN) classifier to predict digits drawn by users, with real-time digit recognition through an interactive drawing interface that allowed users to sketch digits, which classified numbers using the Euclidean distance metric."
+    },
+    {
+        "title": "Self-Run Neighborhood Battery Recycling Collection Program",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Prioritized elderly and nursing home residents who did not have easy access to safe deposit locations, averaging 40 pounds of batteries per week, keeping harmful acids and battery chemicals from releasing, polluting, and harming the environment."
+    },
+    {
+        "title": "Cultural Exchange Ambassador and English Teacher",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Created a fun online learning experience for elementary schoolers in China & Taiwan, developed teaching aids for interactive oral and grammar lessons."
+    },
+    {
+        "title": "Roseville Urban Forest Foundation (RUFF) Pre-Planting Program",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Researched and created a poster that is displayed at all planting events. Contains information about native trees to inform volunteers about the trees that they are planting."
+    },
+    {
+        "title": "Paw-Dentify: Recognizing Your Furry Friend",
+        "year": "2022",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Developed a machine learning model in Microsoft Azure, trained and fine-tuned a model to accurately recognize and categorize pets from user-submitted images, utilizing advanced techniques and skills obtained from the tutorship of Francesca Lazzeri at Columbia University."
+    },
+    {
+        "title": "A exercitationem rem consectetur.",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Dignissimos voluptatibus aliquid pariatur recusandae repudiandae, illum id quos? Inventore necessitatibus animi dolore blanditiis iusto modi, alias placeat cum, aut, quas quis. Saepe animi, provident magnam blanditiis incidunt autem unde."
+    },
+    {
+        "title": "Officia maxime aliquid omnis.",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Asperiores sunt laboriosam tenetur cupiditate recusandae optio veritatis nisi esse, laborum facere neque numquam nesciunt, ad necessitatibus quaerat maiores. Illo aliquid minus aliquam iste alias consectetur pariatur asperiores at exercitationem."
+    },
+    {
+        "title": "Facilis, tempora quasi! Animi!",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptatum sunt culpa fugiat unde! Placeat, dolor. Odio ad eaque quo exercitationem tempore, sit pariatur animi quibusdam enim! Laudantium perferendis mollitia laboriosam unde quod doloremque veritatis, minus sed blanditiis molestiae!"
+    },
+    {
+        "title": "Reiciendis delectus tenetur nulla.",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nobis sunt voluptate nemo dolorum nisi, nam veniam magnam, maxime non eaque velit ea quo laudantium aperiam ullam accusantium, rem voluptatibus sapiente et laborum? Quidem voluptatum deleniti reiciendis blanditiis fugit."
+    }
+]

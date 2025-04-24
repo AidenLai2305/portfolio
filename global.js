@@ -87,3 +87,51 @@ form?.addEventListener('submit', function (event) {
 
   location.href = url;
 });
+
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    console.log(response)
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    
+  }
+}
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  // 1. Clear existing content
+  containerElement.innerHTML = '';
+
+  // 2. Loop through each project
+  project.forEach(project => {
+    const article = document.createElement('article');
+
+    // 3. Create dynamic heading tag safely
+    const headingTag = ['h1','h2','h3','h4','h5','h6'].includes(headingLevel) ? headingLevel : 'h3';
+
+    // 4. Define HTML content with fallback for missing image
+    article.innerHTML = `
+      <${headingTag}>${project.title}</${headingTag}>
+      <img src="${project.image || 'default.jpg'}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+
+    // 5. Append article to the container
+    containerElement.appendChild(article);
+  });
+}
+
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}

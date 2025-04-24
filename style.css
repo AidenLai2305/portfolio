@@ -138,3 +138,27 @@ label.color-scheme {
   font-size: 80%;
   font-family: inherit;
 }
+
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+  max-width: 100%;
+  margin: 1.5rem 0;
+}
+
+.github-grid dt {
+  grid-row: 1;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280; /* Tailwind's gray-500 */
+}
+
+.github-grid dd {
+  grid-row: 2;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
