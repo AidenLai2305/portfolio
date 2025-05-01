@@ -71,6 +71,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
+  padding-top: 2rem;
 }
 
 .projects article {
@@ -161,4 +162,80 @@ label.color-scheme {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+}
+
+.project-year {
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+
+  width: 100%;
+  height: auto;
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  list-style: none;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.swatch {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  aspect-ratio: 1 / 1
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-block-end: 2 rem;
+  padding-bottom: 2rem;
+}
+
+svg {
+  width: 100%;
+  max-width: 20em;
+  height: auto;
+  display: block;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path {
+  cursor: pointer;
 }
