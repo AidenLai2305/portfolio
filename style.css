@@ -336,12 +336,12 @@ circle.selected {
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  text-align: center;
-  max-width: max-content;
-  margin: 1.5rem 0; /* ⬅️ this centers the grid horizontally */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1.5rem 0;
 }
 
 .stats dt {
