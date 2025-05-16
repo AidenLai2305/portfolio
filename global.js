@@ -126,6 +126,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
       <img src="${project.image || 'default.jpg'}" alt="${project.title}">
       <div>
       <p>${project.description}</p>
+      ${project.url !== "None" ? `<a href="${project.url}" target="_blank">View!</a>` : ""}
       <p class="project-year">c.${project.year}</p>
       </div>
     `;
