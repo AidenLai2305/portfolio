@@ -1,5 +1,12 @@
 [
     {
+        "title": "Bike Traffic Tracker",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An interactive map visualization of Boston’s Bluebikes bike-sharing traffic. It uses circle size to show total station activity and color to indicate the balance between arrivals and departures. A time slider and legend help users explore traffic patterns throughout the day."
+    },
+
+    {
         "title": "Deceptive Statistics: Does the law treat all individuals equally?",
         "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -53,12 +60,7 @@
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Dignissimos voluptatibus aliquid pariatur recusandae repudiandae, illum id quos? Inventore necessitatibus animi dolore blanditiis iusto modi, alias placeat cum, aut, quas quis. Saepe animi, provident magnam blanditiis incidunt autem unde."
     },
-    {
-        "title": "Officia maxime aliquid omnis.",
-        "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Asperiores sunt laboriosam tenetur cupiditate recusandae optio veritatis nisi esse, laborum facere neque numquam nesciunt, ad necessitatibus quaerat maiores. Illo aliquid minus aliquam iste alias consectetur pariatur asperiores at exercitationem."
-    },
+
     {
         "title": "Facilis, tempora quasi! Animi!",
         "year": "2025",
