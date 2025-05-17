@@ -80,6 +80,14 @@ button {
   grid-row: span 3;
 }
 
+.projects img {
+  width: 100%;
+  height: 12rem;            /* or any consistent fixed value */
+  object-fit: cover;
+  background-color: #1e1e1e; /* fallback for SVG placeholder */
+  display: block;
+}
+
 h2 {
   margin: 0;
 }
