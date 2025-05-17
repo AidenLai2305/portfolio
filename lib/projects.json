@@ -2,7 +2,7 @@
   {
     "title": "Bikerwatch: Tracking Daily Bike Traffic Across Boston",
     "year": "2025",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "image": "https://github.com/AidenLai2305/portfolio/blob/main/images/IMG_8409.png?raw=true",
     "description": "An interactive map visualization of Boston’s Bluebikes bike-sharing traffic. It uses circle size to show total station activity and color to indicate the balance between arrivals and departures. A time slider and legend help users explore traffic patterns throughout the day.",
     "url": "https://aidenlai2305.github.io/dsc106-lab7/"
   },
