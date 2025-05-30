@@ -1,7 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import scrollama from "https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm";
 
-// Global variables
 let data;
 let commits;
 let filteredCommits;
@@ -12,10 +11,6 @@ let commitProgress = 100;
 let timeScale;
 let commitMaxTime;
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
-
-// -----------------
-// Data Loading and Processing
-// -----------------
 
 async function loadData() {
   const csvData = await d3.csv("loc.csv", (row) => ({
@@ -59,19 +54,13 @@ function processCommits(data) {
     });
 }
 
-// -----------------
-// Rendering Functions
-// -----------------
 function updateSummaryStats(filteredCommits, filteredData) {
-  // Clear the previous stats grid
   d3.select("#stats .summary-stats-grid").remove();
 
-  // If there are no commits, do nothing further.
   if (filteredCommits.length === 0) {
     return;
   }
 
-  // Calculate stats based on the filtered data
   const numFiles = new Set(filteredData.map((d) => d.file)).size;
   const totalLoc = filteredData.length;
   const maxDepth = d3.max(filteredData, (d) => d.depth) || 0;
@@ -124,7 +113,6 @@ function updateSummaryStats(filteredCommits, filteredData) {
     filteredData.map((d) => d.date.toISOString().split("T")[0])
   ).size;
 
-  // Render the new stats
   renderCommitInfo(
     filteredCommits,
     numFiles,
@@ -151,14 +139,12 @@ function updateFileDisplay(filteredCommits) {
     .selectAll("div")
     .data(files, (d) => d.name)
     .join(
-      // This code only runs when the div is initially rendered
       (enter) =>
         enter.append("div").call((div) => {
           div.append("dt").append("code");
           div.append("dd");
         })
     );
-  // This code updates the div info
   filesContainer
     .select("dt > code")
     .html(
@@ -366,9 +352,6 @@ function updateTooltipPosition(event) {
   tooltip.style.top = `${event.pageY + 10}px`;
 }
 
-// -----------------
-// Brush and Selection Functions
-// -----------------
 
 function renderSelectionCount(selection) {
   const selectedCommits = selection
@@ -444,10 +427,6 @@ function renderLanguageBreakdown(selection) {
   }
 }
 
-// -----------------
-// Event Handlers
-// -----------------
-
 function onTimeSliderChange() {
   const slider = document.getElementById("commit-progress");
   commitProgress = +slider.value;
@@ -467,16 +446,12 @@ function onTimeSliderChange() {
   updateSummaryStats(filteredCommits, filteredData);
 }
 
-// -----------------
-// Main Execution
-// -----------------
 
 async function main() {
   data = await loadData();
   commits = processCommits(data);
   filteredCommits = commits;
 
-  // Sort commits by datetime for scrollytelling steps
   commits = d3.sort(commits, (d) => d.datetime);
 
   timeScale = d3
@@ -486,12 +461,10 @@ async function main() {
 
   renderScatterPlot(data, filteredCommits);
 
-  // Set up event listeners
   document
     .getElementById("commit-progress")
     .addEventListener("input", onTimeSliderChange);
 
-  // Initial call to set time display and render all components
   onTimeSliderChange();
 
   d3.select("#scatter-story")
@@ -520,37 +493,32 @@ async function main() {
       `
     );
 
-  // Step 3.3: Making it update with Scrollama
   const scroller = scrollama();
 
   scroller
     .setup({
       container: "#scrolly-1",
       step: "#scrolly-1 .step",
-      offset: 0.5, // Trigger when step is at the midpoint of the screen
-      debug: false, // Set to true for debugging scrollama
+      offset: 0.5, 
+      debug: false, 
     })
     .onStepEnter((response) => {
-      // Get the datetime of the entered commit
       const currentCommitDatetime = response.element.__data__.datetime;
 
-      // Filter commits up to this datetime
       const newFilteredCommits = commits.filter(
         (d) => d.datetime <= currentCommitDatetime
       );
       const newFilteredData = data.filter(
         (d) => d.datetime <= currentCommitDatetime
-      ); // Filter raw data as well
+      );
 
-      // Update the scatter plot and other displays
       updateScatterPlot(data, newFilteredCommits);
       updateFileDisplay(newFilteredCommits);
       updateSummaryStats(newFilteredCommits, newFilteredData);
     })
     .onStepExit((response) => {
-      // Handle when a step exits, e.g., if scrolling up
       if (response.direction === "up" && response.index === 0) {
-        updateScatterPlot(data, []); // Clear plot or show only initial state
+        updateScatterPlot(data, []); 
         updateFileDisplay([]);
         updateSummaryStats([], []);
       }

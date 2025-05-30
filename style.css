@@ -509,20 +509,20 @@ circle.selected {
 
 #files dd {
   grid-column: 2;
-  display: flex; /* Added for unit visualization */
-  flex-wrap: wrap; /* Added for unit visualization */
-  align-items: start; /* Added for unit visualization */
-  align-content: start; /* Added for unit visualization */
-  gap: 0.15em; /* Added for unit visualization */
-  padding-top: 0.6em; /* Added for unit visualization */
-  margin-left: 0; /* Added for unit visualization */
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: start; 
+  align-content: start; 
+  gap: 0.15em; 
+  padding-top: 0.6em; 
+  margin-left: 0; 
 }
 
 .loc {
   display: flex;
   width: 0.5em;
   aspect-ratio: 1;
-  background: var(--color); /* Modified to use the CSS variable */
+  background: var(--color); 
   border-radius: 50%;
 }
 
@@ -547,16 +547,36 @@ circle.selected {
 }
 
 #scrolly-1 .step {
-  padding-bottom: 0vh; /* Adjust as needed to space out the steps */
+  padding-bottom: 0vh;
 }
 
 #language-breakdown {
-  width: 80%; /* Or any specific pixel value like 300px */
-  max-width: 500px; /* To prevent them from getting too wide on large screens */
-  margin-left: auto; /* Centers the block element if it has a defined width */
-  margin-right: auto; /* Centers the block element if it has a defined width */
-  text-align: center; /* Centers the text content within the block */
-  margin-top: 1rem; /* Add some space below the plot, as previously suggested */
+  width: 80%;
+  max-width: 500px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center; 
+  margin-top: 1rem;
   min-height: 100px;
 }
 
+.commit-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.commit-slider-label {
+  white-space: nowrap;
+}
+
+#commit-progress {
+  flex-grow: 1;
+}
+
+#commit-time {
+  margin-left: auto;
+  white-space: nowrap;
+}

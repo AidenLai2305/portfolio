@@ -13,29 +13,6 @@
 
     <h2>Summary Stats</h2>
 
-    <style>
-      .commit-slider-row {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-      }
-
-      .commit-slider-label {
-        white-space: nowrap;
-      }
-
-      #commit-progress {
-        flex-grow: 1;
-      }
-
-      #commit-time {
-        margin-left: auto;
-        white-space: nowrap;
-      }
-    </style>
-
     <div class="commit-slider-row">
         <label class="commit-slider-label" for="commit-progress">Show commits until:</label>
         <input type="range" id="commit-progress" min="0" max="100" value="100" />
