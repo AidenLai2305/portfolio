@@ -368,3 +368,195 @@ circle.selected {
 
 }
 
+#stats h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.45em;
+  color: #333; /* Light mode text color */
+}
+
+
+/* styling for the commits by day chart */
+.gridlines line {
+  stroke: #e0e0e0; /* A light gray color */
+  stroke-width: 1px; /* Or a thinner value if needed */
+  opacity: 0.7; /* Adjust the opacity to make them more subtle */
+}
+
+/* tooltip css */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  margin: 0;
+  opacity: 0.6; /* make labels less prominent */
+}
+
+dl.info dd {
+  margin: 0; /* remove default margins */
+  margin-left: 1.5em;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: rgba(255, 255, 255, 0.8); /* soft white */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* subtle elevation */
+  border-radius: 6px; /* rounded corners */
+  padding: 0.5em 1em; /* spacing */
+  backdrop-filter: blur(4px); /* optional frosted-glass effect */
+  pointer-events: none; /* so it doesn’t interfere with mouse events */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  z-index: 1000; /* Added: Ensures the tooltip appears on top of other content */
+}
+
+/* This rule makes the tooltip invisible and not clickable when hidden.
+   It works in conjunction with the JS updateTooltipVisibility(false)
+   which will set the 'hidden' attribute on the dl element. */
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: all 200ms, r calc(var(--r, 0) * 100ms);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* explicitly say what starting state should be */
+@starting-style {
+  circle {
+    r: 0;
+  }
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+#chart {
+  margin-top: 2rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+  max-width: max-content;
+  margin: 1.5rem 0; /* ⬅️ this centers the grid horizontally */
+}
+
+.stats dt {
+  grid-row: 1;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280; /* Tailwind's gray-500 */
+}
+
+.stats dd {
+  grid-row: 2;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex; /* Added for unit visualization */
+  flex-wrap: wrap; /* Added for unit visualization */
+  align-items: start; /* Added for unit visualization */
+  align-content: start; /* Added for unit visualization */
+  gap: 0.15em; /* Added for unit visualization */
+  padding-top: 0.6em; /* Added for unit visualization */
+  margin-left: 0; /* Added for unit visualization */
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color); /* Modified to use the CSS variable */
+  border-radius: 50%;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  height: 50vh;
+}
+
+#scrolly-1 .step {
+  padding-bottom: 0vh; /* Adjust as needed to space out the steps */
+}
+
+#language-breakdown {
+  width: 80%; /* Or any specific pixel value like 300px */
+  max-width: 500px; /* To prevent them from getting too wide on large screens */
+  margin-left: auto; /* Centers the block element if it has a defined width */
+  margin-right: auto; /* Centers the block element if it has a defined width */
+  text-align: center; /* Centers the text content within the block */
+  margin-top: 1rem; /* Add some space below the plot, as previously suggested */
+  min-height: 100px;
+}
+
